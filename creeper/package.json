@@ -1,0 +1,19 @@
+{
+  "name": "creeper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "creep.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "koa": "^2.7.0",
+    "koa-router": "^7.4.0",
+    "mysql-pro": "^1.0.1",
+    "superagent": "^5.1.0",
+    "superagent-charset": "^1.2.0"
+  }
+}
