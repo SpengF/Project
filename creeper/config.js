@@ -5,6 +5,6 @@ module.exports={
   db_host:    '39.96.210.255',
   db_port:    3306,
   db_user:    'root',
-  db_pass:    'BF9be00aecb3',
+  db_pass:    '***',
   db_name:    'English',
 }
