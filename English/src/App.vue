@@ -2,7 +2,6 @@
   <div id="app">
     <Header></Header>
     <router-view/>
-    <button @click="send">点击发送请求</button>
   </div>
 </template>
 

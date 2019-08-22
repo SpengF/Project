@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import mint from 'mint-ui'
+import Vant from 'vant'
 import {fetchPost} from './api/index'
 /**
  * @compunents 各类组件
@@ -12,8 +12,8 @@ Vue.use(Header)
 Vue.config.productionTip = false
 Vue.prototype.$post=fetchPost;
 
-import 'mint-ui/lib/style.css'
-Vue.use(mint) 
+import 'vant/lib/index.css';
+Vue.use(Vant) 
 
 import './mock/index.js'
 new Vue({
