@@ -6,6 +6,8 @@ yarn-debug.log*
 yarn-error.log*
 /creeper/node_modules/
 ../creeper/node_modules/
+../server/node_modules/
+/server/node_modules/
 index.html
 # Editor directories and files
 .idea
