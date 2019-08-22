@@ -1,23 +1,27 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <Header></Header>
     <router-view/>
+    <button @click="send">点击发送请求</button>
   </div>
 </template>
 
 <script>
+// import Header from './pages/header'
 export default {
-  name: 'App'
+  name: 'App',
+  // components:{
+  //   Header
+  // }
+  methods:{
+    send(){
+      this.$post('/index').then(res=>{
+        console.log(5555,res)
+      })
+    }
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
