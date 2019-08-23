@@ -1,17 +1,20 @@
 <template>
-  <div id="app">
-    <Header></Header>
-    <router-view/>
+  <div id="app" >
+    <Header headerTitle='主页' :backshow='false'></Header>
+    <router-view id="main"/>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
-// import Header from './pages/header'
+import Footer from './pages/footer'
+import Header from './pages/header'
 export default {
   name: 'App',
-  // components:{
-  //   Header
-  // }
+  components:{
+    Header,
+    Footer
+  },
   methods:{
     send(){
       this.$post('/index').then(res=>{
@@ -23,4 +26,7 @@ export default {
 </script>
 
 <style>
+  #main{
+    margin: 50px 0;
+  }
 </style>

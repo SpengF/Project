@@ -1,7 +1,7 @@
 <template>
   <div class="header">
-  <van-nav-bar title="标题" left-text="返回" left-arrow>
-    <van-icon name="search" slot="right" class="header-icon-serach"/>
+  <van-nav-bar :title="headerTitle" :left-text="backshow?'返回':''" :left-arrow='backshow'>
+    <!-- <van-icon name="search" slot="right" class="header-icon-serach"/> -->
   </van-nav-bar>
   </div>
 </template>
@@ -10,14 +10,29 @@
 export default {
   data(){
     return {
-      selected:1
+      selected:1,
+    }
+  },
+  props:{
+    headerTitle:{
+      type:String,
+      default:'标题'
+    },
+    backshow:{
+      type:Boolean,
+      default:true
     }
   }
 }
 </script>
 
 <style lang='less'>
-  .header-icon-serach{
-    font-size: 18px;
+  .header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    .header-icon-serach{
+      font-size: 18px;
+    }
   }
 </style>
