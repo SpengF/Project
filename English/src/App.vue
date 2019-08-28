@@ -9,10 +9,9 @@
     <Footer></Footer>
     <van-popup v-model="show" position="left" :style="{height:'100%',width:'35%'}">
       <ul class="sliderContent">
-        <li>asd</li>
-        <li>asd</li>
-        <li>sss</li>
-        <li>ssss</li>
+        <li v-for="item in getslideArray" :key='item.to'>
+          <router-link :to='item.to'>{{item.level}}</router-link>
+        </li>
       </ul>
     </van-popup>
   </div>
@@ -26,10 +25,18 @@ export default {
       show:false,
     }
   },
+  mounted(){
+    this.$store.dispatch('assignmentSlideArray')
+  },
   methods:{
     showPopup(){
       this.show=!this.show;
     },
+  },
+  computed:{
+    getslideArray(){
+      return this.$store.state.mainPage.slideArray
+    }
   }
 }
 </script>

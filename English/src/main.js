@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store/store'
 import Vant from 'vant'
 import {fetchPost} from './api/index'
 
@@ -16,6 +17,7 @@ import './mock/index.js'
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
