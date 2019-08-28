@@ -8,3 +8,17 @@
 }
 .clearfix{ *zoom:1;} 
 ::-webkit-scrollbar {display:none}
+.header .my-icon-left{
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  line-height: 46px;
+  left: 16px;
+}
+.header .my-icon-right{
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  line-height: 46px;
+  right: 16px;
+}

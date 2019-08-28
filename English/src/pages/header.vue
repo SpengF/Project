@@ -1,8 +1,8 @@
 <template>
   <div class="header">
   <van-nav-bar :title="headerTitle" :left-text="backshow?'返回':''" :left-arrow='backshow'>
-    <!-- <van-icon name="search" slot="right" class="header-icon-serach"/> -->
   </van-nav-bar>
+    <slot name="icon" class="icon"></slot>
   </div>
 </template>
 
@@ -22,6 +22,8 @@ export default {
       type:Boolean,
       default:true
     }
+  },
+  methods:{
   }
 }
 </script>

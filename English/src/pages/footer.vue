@@ -18,7 +18,7 @@ export default {
   },
   methods:{
     goMainPage(){
-      this.$router.push({path:'/mainPage'})
+      this.$router.push({path:'/'})
     },
     search(){
       this.$router.push({path:'/search'})

@@ -9,7 +9,9 @@ Vue.prototype.$post=fetchPost;
 import './assets/css/reset.css'
 import 'vant/lib/index.css';
 Vue.use(Vant) 
-
+import {Header,Footer} from './components/component'
+Vue.use(Header)
+Vue.use(Footer)
 import './mock/index.js'
 new Vue({
   el: '#app',
