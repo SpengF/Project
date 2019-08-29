@@ -1,4 +1,5 @@
 import {fetchPost} from '../api/index'
+import { Toast } from 'vant';
 const mainPage={
   state: {
     slideArray:[],
@@ -19,11 +20,10 @@ const mainPage={
         commit('assignmentSlideArray',data)
       }
       catch(e){
-        console.log(e)
+        Toast(e);
       }
     },
     async assignmentLevel({commit},el){
-      console.log(333,el)
       let data=await fetchPost(el)
       commit('assignmentLevel',data)
     }
@@ -33,7 +33,7 @@ const mainPage={
       return state.slideArray
     },
     getlevelArray(state){
-      return state.levelArray
+      return state.levelarray
     }
   }
 }
