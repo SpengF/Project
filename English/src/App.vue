@@ -9,9 +9,9 @@
     <Footer></Footer>
     <van-popup v-model="show" position="left" :style="{height:'100%',width:'35%'}">
       <ul class="sliderContent">
-        <li v-for="item in getslideArray" :key='item.to'>
-          <router-link :to='item.to'>{{item.level}}</router-link>
-        </li>
+          <li v-for="item in getslideArray" :key='item.to' @click='routerto(item.to)'>
+            {{item.level}}
+          </li>
       </ul>
     </van-popup>
   </div>
@@ -32,6 +32,10 @@ export default {
     showPopup(){
       this.show=!this.show;
     },
+    routerto(e){
+      this.show=false;
+      this.$router.push({path:e})
+    }
   },
   computed:{
     getslideArray(){
@@ -52,6 +56,11 @@ export default {
     text-align: center;
     li{
       padding: 10px;
+      border-bottom: 1px solid #ccc;
+      color: black;
+      .levelClor{
+        color: black;
+      }
     }
   }
 </style>

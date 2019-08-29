@@ -1,24 +1,39 @@
-import axios from "axios"
+import {fetchPost} from '../api/index'
 const mainPage={
   state: {
-    slideArray:[]
+    slideArray:[],
+    levelarray:[]
   },
   mutations: {
     assignmentSlideArray(state,e){
       state.slideArray=e;
+    },
+    assignmentLevel(state,e){
+      state.levelarray=e;
     }
   },
   actions:{
     async assignmentSlideArray({commit}){
-      let data=await axios.get('/index')
-      if(data.status===200){
-        commit('assignmentSlideArray',data.data)
+      try {
+        let data=await fetchPost('/index')
+        commit('assignmentSlideArray',data)
       }
+      catch(e){
+        console.log(e)
+      }
+    },
+    async assignmentLevel({commit},el){
+      console.log(333,el)
+      let data=await fetchPost(el)
+      commit('assignmentLevel',data)
     }
   },
   getters: {
     getslideArray(state){
       return state.slideArray
+    },
+    getlevelArray(state){
+      return state.levelArray
     }
   }
 }
