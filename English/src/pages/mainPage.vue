@@ -19,10 +19,12 @@
 
 <script>
 import LeftPop from '../components/leftPop'
+import recordingDestroyed from '../components/Destroyed'
 export default {
   components:{
     LeftPop
   },
+  mixins:[recordingDestroyed],
   data(){
     return {
       

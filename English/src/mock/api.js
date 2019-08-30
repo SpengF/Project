@@ -8,9 +8,11 @@ const allApi={
     let toUrl=url[url.length-1]
     if(toUrl==='level4'){
       return Mock.mock({
-          'list|1-10': [{
+          'data|100': [{
               'id|+1': 1,
-              'email': '@EMAIL'
+              'word':'@name',
+              'soundMark':'@name',
+              'content':'@cparagraph(2)'
           }]
       })
     }else if(toUrl==='level6'){
