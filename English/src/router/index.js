@@ -21,7 +21,7 @@ export default new Router({
     {
       path: '/level/:id',
       name: '英语等级',
-      component: level
+      component: level,
     }
   ]
 })

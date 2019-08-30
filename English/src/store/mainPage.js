@@ -1,8 +1,11 @@
 import {fetchPost} from '../api/index'
+import { Toast } from 'vant';
 const mainPage={
   state: {
     slideArray:[],
-    levelarray:[]
+    levelarray:[],
+    recordingDestroyed:'', //记录离开首页路由路径
+    recordingScrool:''      //记录单词离开时位置
   },
   mutations: {
     assignmentSlideArray(state,e){
@@ -10,6 +13,12 @@ const mainPage={
     },
     assignmentLevel(state,e){
       state.levelarray=e;
+    },
+    recordingDestroyed(state,e){
+      state.recordingDestroyed=e;
+    },
+    recordingScrool(state,e){
+      state.recordingScrool=e;
     }
   },
   actions:{
@@ -19,21 +28,26 @@ const mainPage={
         commit('assignmentSlideArray',data)
       }
       catch(e){
-        console.log(e)
+        Toast(e);
       }
     },
     async assignmentLevel({commit},el){
-      console.log(333,el)
       let data=await fetchPost(el)
       commit('assignmentLevel',data)
     }
   },
   getters: {
     getslideArray(state){
-      return state.slideArray
+      return state.slideArray;
     },
     getlevelArray(state){
-      return state.levelArray
+      return state.levelarray;
+    },
+    getrecordingDestroyed(state){
+      return state.recordingDestroyed;
+    },
+    recordingScrool(state){
+      return state.recordingScrool;
     }
   }
 }

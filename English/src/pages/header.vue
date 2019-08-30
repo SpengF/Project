@@ -10,7 +10,6 @@
 export default {
   data(){
     return {
-      selected:1,
     }
   },
   props:{
@@ -33,6 +32,7 @@ export default {
     position: fixed;
     width: 100%;
     top: 0;
+    z-index: 1;
     .header-icon-serach{
       font-size: 18px;
     }
