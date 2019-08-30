@@ -5,7 +5,15 @@ const cheerio=require('cheerio');
 module.exports={
   fn:async (address)=>{
         function dataJoin(arg){
-          return '('+arg.map(item=>`'${item.toString().replace(/\'/g,'')}'`).join(',')+')'  //删除数据中的',并添加
+          let jsonArr = [];
+          let obj = {};
+          for(let key in arg){
+            obj.id = arg[0]
+            obj.word = arg[1]
+            obj.pronunciation = arg[2]
+            obj.chinese = arg[3]
+          }
+          return obj
         }
         let arr=[];
         let data=await superagent.get(address).charset()
@@ -27,7 +35,6 @@ module.exports={
           })
             arr.push(dataJoin(childrenArr))
         })
-        return sql=arr.join(',')
-        // return sql=arr
+        return sql=arr
       }
 }
