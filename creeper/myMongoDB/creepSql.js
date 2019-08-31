@@ -12,6 +12,7 @@ module.exports={
             obj.word = arg[1]
             obj.pronunciation = arg[2]
             obj.chinese = arg[3]
+            obj.collection = false
           }
           return obj
         }
