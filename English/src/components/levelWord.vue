@@ -4,8 +4,8 @@
       <li v-for="item in getlevelArray" :key="item.id">
         <van-collapse v-model="activeNames">
           <van-collapse-item :title="item.word" :name="item.id">
-            <van-button type="primary">主要按钮</van-button>
-            <van-button type="info">信息按钮</van-button>
+            <van-button type="danger">删除</van-button>
+            <van-button type="info">收藏</van-button>
           </van-collapse-item>
         </van-collapse>
         <slot :todo='item'></slot>
@@ -43,9 +43,9 @@ export default {
         position: relative;
       }
       .van-collapse-item {
-    border-bottom: 2px solid #fff;
-    border-top: 2px solid #fff;
-}
+          border-bottom: 2px solid #fff;
+          border-top: 2px solid #fff;
+      }
       .van-cell{
         background-color: transparent;
         font-size: 16px;
@@ -53,6 +53,13 @@ export default {
       }
       .van-collapse-item__content{
         background-color: transparent;
+        display: flex;
+        padding: 5px;
+        .van-button{
+          flex: 1;
+          height: 30px;
+          line-height: 30px;
+        }
       }
     }
   }

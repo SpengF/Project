@@ -1,7 +1,7 @@
 <template>
   <div class="leftPop">
     <van-popup v-model="show" position="left" :style="{height:'100%',width:'35%'}">
-      <p @click="tohome">回到主页</p>
+      <p @click="tohome" class="toMain">回到主页</p>
       <ul class="sliderContent">
           <li v-for="item in getslideArray" :key='item.to' @click='routerto(item.to)'>
             {{item.level}}
@@ -43,6 +43,19 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang='less'>
+  @import '../assets/css/backGroundColor.less';
+  .van-popup--left {
+    background-color:@body-bgColor;
+  }
+  .toMain{
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0 0 14px 14px;
+    margin: 0 auto;
+    height: 30px;
+    line-height: 30px;
+    background-color:@title-bgColor;
+    box-shadow: 0px -4px 10px #6b6a6a;
+  }
 </style>

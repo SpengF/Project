@@ -4,7 +4,6 @@ import router from './router'
 import store from './store/store'
 import Vant from 'vant'
 import {fetchPost} from './api/index'
-
 Vue.config.productionTip = false
 Vue.prototype.$post=fetchPost;
 import './assets/css/reset.css'

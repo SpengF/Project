@@ -28,7 +28,7 @@ const mainPage={
         commit('assignmentSlideArray',data)
       }
       catch(e){
-        Toast(e);
+        Toast('错误');
       }
     },
     async assignmentLevel({commit},el){

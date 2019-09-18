@@ -49,8 +49,8 @@ export default {
   },
   beforeRouteEnter (to, from, next) {
     next(vm => {
-      let mydocumentScrollTop=document.documentElement.scrollTop || document.body.scrollTop
-        mydocumentScrollTop=vm.$store.getters.recordingScrool
+      document.documentElement.scrollTop=vm.$store.getters.recordingScrool
+      document.body.scrollTop=vm.$store.getters.recordingScrool
     })
   },
 }
