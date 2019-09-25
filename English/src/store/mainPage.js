@@ -26,8 +26,7 @@ const mainPage={
       try {
         let data=await fetchPost('/index')
         commit('assignmentSlideArray',data)
-      }
-      catch(e){
+      }catch(e){
         Toast('错误');
       }
     },

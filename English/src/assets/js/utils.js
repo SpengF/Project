@@ -1,11 +1,14 @@
 function debounceInput(method,delay) {
   var timer=null;
   return function () {
-      var context = this, args = arguments;
+      var context = this;
       clearTimeout(timer);
       timer = setTimeout(function () {
-          method.apply(context,args);
+          method.apply(context);
       },delay);
   }
 }
-export {debounceInput}
+function clearSearchHistoryList(ctx){
+  ctx.$store.commit('inputSelect',[])
+}
+export {debounceInput,clearSearchHistoryList}
