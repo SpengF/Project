@@ -35,7 +35,12 @@ const allApi={
     return Mock.mock({
       'wordDetail': {
           'word': e.body.replace(/\"/g,''),
-          'pronunciation': 'https://dictionary.blob.core.chinacloudapi.cn/media/audio/tom/58/1a/581A5AD5D596295155D08C8E49A2A19D.mp3', //url: http://www.baidu.com
+          'wordSound':{
+            'englishSentence':{
+                              'pronunciation': 'https://dictionary.blob.core.chinacloudapi.cn/media/audio/tom/58/1a/581A5AD5D596295155D08C8E49A2A19D.mp3', //url: http://www.baidu.com
+                              'soundmark':'[kənˌɡrætʃuˈleɪʃn]',
+                              },
+          },
           'wordIdea|1-3':  [{
             'nature|1': ['n','v','obj','int'],
             'mean': '@ctitle', //中文,

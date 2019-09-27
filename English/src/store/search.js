@@ -25,17 +25,17 @@ const search={
         let data=await fetchPost('/inputSearch',JSON.stringify(e))
         commit('inputSelect',data)
       }catch(e){
-
+        
       }
     },
-    async wordDetails({commit},e){
+    async wordDetails({commit},e){ 
       commit('vanSkeletonLoadingShow')
       try {
         let data=await fetchPost('/wordDetails',JSON.stringify(e))
         commit('vanSkeletonLoadingHide')
         commit('wordDetails',data)
       }catch(e){
-
+        throw Error('错了吧')
       }
     }
   },
@@ -44,7 +44,6 @@ const search={
       return state.inputSelect
     },
     wordDetails(state){
-      console.log(state.wordDetails)
       return state.wordDetails
     },
     vanSkeletonLoading(state){

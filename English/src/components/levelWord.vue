@@ -8,7 +8,9 @@
             <van-button type="info">收藏</van-button>
           </van-collapse-item>
         </van-collapse>
-        <slot :todo='item'></slot>
+        <div @click="turnToSearch(item.word)">
+          <slot :todo='item'></slot>
+        </div>
       </li>
     </ul>
   </div>
@@ -24,6 +26,12 @@ export default {
   props:{
     getlevelArray:{
       type:Array,
+    }
+  },
+  methods:{
+    turnToSearch(e){
+      this.$store.dispatch('wordDetails',e)
+      this.$router.push({name:'levelWordDetail'})
     }
   }
 }

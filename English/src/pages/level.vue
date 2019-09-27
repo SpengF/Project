@@ -1,15 +1,13 @@
 <template>
   <div class="level">
-    <Header headerTitle='主页' :backshow='false' ref='headers'>
+    <Header :headerTitle='this.getLevelName' :backshow='false' ref='headers'>
       <template v-slot:icon>
         <van-icon name="apps-o" slot="right" class="header-icon-serach my-icon-left" @click="showPopup"/>
       </template>
     </Header>
-    <!-- {{getlevelArray.data}} -->
       <LevelWord :getlevelArray='this.getlevelArray.data' v-slot="{todo}">
-        <!-- <p class="levelword">{{todo.word}}</p> -->
-        <p>音标:{{todo.soundMark}}</p>
-        <p>解释:{{todo.content}}</p>
+          <p>音标:{{todo.soundMark}}</p>
+          <p>解释:{{todo.content}}</p>
       </LevelWord>
     <Left-pop ref="leftpop"></Left-pop>
   </div>
@@ -33,7 +31,8 @@ export default {
   computed:{
     ...mapGetters([
       'getlevelArray',
-      'recordingScrool'
+      'recordingScrool',
+      'getLevelName'
     ])
   },
   mounted(){

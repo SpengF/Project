@@ -3,7 +3,7 @@
     <van-popup v-model="show" position="left" :style="{height:'100%',width:'35%'}">
       <p @click="tohome" class="toMain">回到主页</p>
       <ul class="sliderContent">
-          <li v-for="item in getslideArray" :key='item.to' @click='routerto(item.to)'>
+          <li v-for="item in getslideArray" :key='item.to' @click='routerto(item)'>
             {{item.level}}
           </li>
       </ul>
@@ -33,7 +33,7 @@ export default {
     routerto(e){
       this.show=false;
       this.$store.dispatch('assignmentLevel',e)
-      this.$router.push({path:e})
+      this.$router.push({path:e.to})
     },
     tohome(){
       this.show=false;

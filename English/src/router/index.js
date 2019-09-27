@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import mainPage from '@/pages/mainPage'
 import search from '@/pages/search'
 import level from '@/pages/level'
+import levelWordDetail from '@/pages/levelWordDetail'
 
 Vue.use(Router)
 
@@ -10,18 +11,23 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: '主页',
+      name: 'marinPage',
       component: mainPage
     },
     {
+      path:'/levelWordDetail',
+      name:'levelWordDetail',
+      component:levelWordDetail
+    },
+    {
       path: '/search',
-      name: '搜索',
+      name: 'search',
       component: search
     },
     {
-      path: '/level/:id',
-      name: '英语等级',
+      path: '/level/:level',
+      name: 'level',
       component: level,
-    }
+    },
   ]
 })

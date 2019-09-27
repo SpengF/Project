@@ -1,27 +1,24 @@
 <template>
   <div class="wordDetails">
-    <van-skeleton :title="false" :row="5" class="van-skeleton-loading" v-show="vanSkeletonLoading"/>
     <ul>
-      <li>
+      <li class="word">
         {{wordDetailList.wordDetail.word}}
-        <van-icon name="volume-o" @click="lisetnWord(wordDetailList.wordDetail.pronunciation)"/>
       </li>
-      <li>
-        <p>词义：</p>
+      <li class="soundmark">
+        <span>英</span>{{wordDetailList.wordDetail.wordSound.englishSentence.soundmark}}<van-icon name="volume-o" @click="lisetnWord(wordDetailList.wordDetail.wordSound.englishSentence.pronunciation)"/>
+      </li>
+      <li class="wordIdea">
         <p v-for="item in wordDetailList.wordDetail.wordIdea" :key="item.length">
-          {{item.nature}}
+          <span class="wordIdeaNature">{{item.nature}}</span>
           {{item.mean}}
         </p>
       </li>
-      <li>
-        <p>例句：</p>
-        <p v-for="item in wordDetailList.wordDetail.sentence" :key="item.length">
-          {{item.chineseSentence}}<br/>
-          {{item.englishSentence}}
-        </p>
+      <li class="sentence">
+        <div v-for="item in wordDetailList.wordDetail.sentence" :key="item.length">
+          <p class="chineseSentence">{{item.chineseSentence}}</p>
+          <p class="englishSentence">{{item.englishSentence}}</p>
+        </div>
       </li>
-      <li></li>
-      <li></li>
     </ul>
   </div>
 </template>
@@ -30,12 +27,7 @@
 export default {
   props:{
     wordDetailList:{
-      type:Object
-    }
-  },
-  computed:{
-    vanSkeletonLoading:function(){
-      return this.$store.getters.vanSkeletonLoading
+      type:Object,
     }
   },
   methods:{
@@ -50,6 +42,47 @@ export default {
 <style lang='less'>
 .wordDetails{
   padding: 0 12px;
+  ul li{
+    padding-top: 10px;
+    p{ 
+      margin: 0;
+    }
+  }
+  .word{
+    font-weight: 700;
+    color: #565656;
+    padding-top: 10px;
+  }
+  .soundmark{
+    display: flex;
+    align-items: center;
+    span{
+      padding-right: 10px;
+    }
+    i{
+      padding-left: 10px;
+    }
+  }
+  .wordIdea{
+    color: #929292cc;
+    .wordIdeaNature{
+      padding-right: 10px;
+      color: #565656;
+    }
+  }
+  .sentence{
+    div{
+      padding-top: 10px;
+    }
+    .chineseSentence{
+      color: #736363;
+    }
+    .englishSentence{
+      padding: 5px 0 10px;
+      border-bottom: 1px solid #ccc;
+      color: #afadad;
+    }
+  }
 }
 .van-skeleton-loading{
   margin-top: 50px;
