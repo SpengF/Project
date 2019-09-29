@@ -45,7 +45,7 @@ export default {
 
 <style lang='less'>
   @import '../assets/css/backGroundColor.less';
-  .van-popup--left {
+  .leftPop .van-popup--left {
     background-color:@body-bgColor;
   }
   .toMain{
