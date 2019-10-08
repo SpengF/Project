@@ -3,7 +3,7 @@
     <van-tabbar v-model="active" >
       <van-tabbar-item icon="home-o" @click='goMainPage'>首页</van-tabbar-item>
       <van-tabbar-item icon="search"  @click='search'>搜索</van-tabbar-item>
-      <van-tabbar-item icon="friends-o">我的</van-tabbar-item>
+      <van-tabbar-item icon="friends-o" @click='mine'>我的</van-tabbar-item>
     </van-tabbar>
   </div>
 </template>
@@ -21,7 +21,10 @@ export default {
     },
     search(){
       this.$router.push({path:'/search'})
-    }
+    },
+    mine(){
+      this.$router.push({path:'/mine'})
+    },
   },
   computed:{
     getrecordingDestroyed(){

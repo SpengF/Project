@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import mainPage from '@/pages/mainPage'
 import search from '@/pages/search'
 import level from '@/pages/level'
+import mine from '@/pages/mine'
 import levelWordDetail from '@/pages/levelWordDetail'
 
 Vue.use(Router)
@@ -28,6 +29,11 @@ export default new Router({
       path: '/level/:level',
       name: 'level',
       component: level,
+    },
+    {
+      path: '/mine',
+      name: 'mine',
+      component: mine,
     },
   ]
 })
