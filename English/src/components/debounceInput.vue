@@ -26,7 +26,7 @@ export default {
   watch:{
     value:function(newVal){
       if(newVal===''){
-        clearSearchHistoryList(this) //搜索框为空则清空搜索下拉框
+        clearSearchHistoryList(this) //搜索框为空则清空搜索下拉框。
       }
     }
   },
